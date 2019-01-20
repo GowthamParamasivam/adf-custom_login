@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="CreateUser.jsf" id="d1" binding="#{backingBeanScope.backing_CreateUser.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_CreateUser.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_CreateUser.f1}">
+            <af:panelStretchLayout id="psl1" binding="#{backingBeanScope.backing_CreateUser.psl1}"
+                                   dimensionsFrom="parent">
+                <f:facet name="center">
+                    <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_CreateUser.pfl1}"
+                                        styleClass="AFStretchWidth">
+                        <af:inputText value="#{bindings.UserId.inputValue}" label="User Id:"
+                                      required="#{bindings.UserId.hints.mandatory}"
+                                      columns="#{bindings.UserId.hints.displayWidth}"
+                                      maximumLength="#{bindings.UserId.hints.precision}"
+                                      shortDesc="#{bindings.UserId.hints.tooltip}" id="it1"
+                                      binding="#{backingBeanScope.backing_CreateUser.it1}" readOnly="true">
+                            <f:validator binding="#{bindings.UserId.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.UserId.format}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.UserName.inputValue}" label="User Name:"
+                                      required="#{bindings.UserName.hints.mandatory}"
+                                      columns="30"
+                                      maximumLength="#{bindings.UserName.hints.precision}"
+                                      shortDesc="#{bindings.UserName.hints.tooltip}" id="it2"
+                                      binding="#{backingBeanScope.backing_CreateUser.it2}">
+                            <f:validator binding="#{bindings.UserName.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.UserPassword.inputValue}"
+                                      label="User Password:"
+                                      required="#{bindings.UserPassword.hints.mandatory}"
+                                      columns="30"
+                                      maximumLength="#{bindings.UserPassword.hints.precision}"
+                                      shortDesc="#{bindings.UserPassword.hints.tooltip}" id="it3"
+                                      binding="#{backingBeanScope.backing_CreateUser.it3}" secret="true">
+                            <f:validator binding="#{bindings.UserPassword.validator}"/>
+                        </af:inputText>
+                        <f:facet name="footer">
+                            <af:panelGroupLayout id="pgl1" binding="#{backingBeanScope.backing_CreateUser.pgl1}">
+                                <af:button actionListener="#{bindings.CreateInsert.execute}" text="Create User"
+                                           disabled="#{!bindings.CreateInsert.enabled}" id="b1"
+                                           binding="#{backingBeanScope.backing_CreateUser.b1}"/>
+                                <af:button text="Submit"
+                                           disabled="#{!bindings.Commit.enabled}" id="b2"
+                                           binding="#{backingBeanScope.backing_CreateUser.b2}"
+                                           actionListener="#{bindings.Commit.execute}"/>
+                                <f:facet name="separator">
+                                    <af:spacer width="10" height="10" id="s1"
+                                               binding="#{backingBeanScope.backing_CreateUser.s1}"/>
+                                </f:facet>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                    </af:panelFormLayout>
+                </f:facet>
+            </af:panelStretchLayout>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_CreateUser-->
+</f:view>

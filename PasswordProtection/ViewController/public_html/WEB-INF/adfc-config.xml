@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="CreateUser">
+    <page>/CreateUser.jsf</page>
+  </view>
+  <view id="Login">
+    <page>/Login.jsf</page>
+  </view>
+  <view id="LandingPage">
+    <page>/LandingPage.jsf</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>createuser</from-outcome>
+      <to-activity-id>CreateUser</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__3">
+      <from-outcome>login</from-outcome>
+      <to-activity-id>Login</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__4">
+      <from-outcome>landingpage</from-outcome>
+      <to-activity-id>LandingPage</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__5">
+    <managed-bean-name>backing_CreateUser</managed-bean-name>
+    <managed-bean-class>view.backing.CreateUser</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1CreateUser.jsf-->
+  </managed-bean>
+  <managed-bean id="__6">
+    <managed-bean-name>backing_Login</managed-bean-name>
+    <managed-bean-class>view.backing.Login</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1Login.jsf-->
+  </managed-bean>
+  <managed-bean id="__7">
+    <managed-bean-name>backing_LandingPage</managed-bean-name>
+    <managed-bean-class>view.backing.LandingPage</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1LandingPage.jsf-->
+  </managed-bean>
+</adfc-config>

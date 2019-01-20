@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="LandingPage.jsf" id="d1" binding="#{backingBeanScope.backing_LandingPage.d1}">
+        <af:form id="f1" binding="#{backingBeanScope.backing_LandingPage.f1}">
+            <af:panelStretchLayout id="psl1" binding="#{backingBeanScope.backing_LandingPage.psl1}">
+                <f:facet name="bottom"/>
+                <f:facet name="center">
+                    <af:activeOutputText value="Successfully Logged in!!!!" id="aot1"
+                                         binding="#{backingBeanScope.backing_LandingPage.aot1}"
+                                         inlineStyle="font-size:xx-large;"/>
+                </f:facet>
+                <f:facet name="start"/>
+                <f:facet name="end"/>
+                <f:facet name="top">
+                    <af:panelGroupLayout id="pgl1" binding="#{backingBeanScope.backing_LandingPage.pgl1}">
+                        <af:button text="Log out" id="b1" binding="#{backingBeanScope.backing_LandingPage.b1}"
+                                   actionListener="#{backingBeanScope.backing_LandingPage.logout}"/>
+                        <af:outputFormatted value="#{sessionScope.user_name}" id="of1"
+                                            binding="#{backingBeanScope.backing_LandingPage.of1}"/>
+                    </af:panelGroupLayout>
+                </f:facet>
+            </af:panelStretchLayout>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_LandingPage-->
+</f:view>

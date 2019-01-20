@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Login.jsf" id="d1" binding="#{backingBeanScope.backing_Login.d1}">
+        <af:form id="f1" binding="#{backingBeanScope.backing_Login.f1}">
+            <af:panelStretchLayout id="psl1" binding="#{backingBeanScope.backing_Login.psl1}" dimensionsFrom="parent">
+                <f:facet name="center">
+                    <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_Login.pfl1}">
+                        <f:facet name="footer"/>
+                        <af:inputText label="User Id:" id="it1" binding="#{backingBeanScope.backing_Login.it1}"
+                                      columns="30" showRequired="true" required="true"/>
+                        <af:inputText label="User Password:" id="it2" binding="#{backingBeanScope.backing_Login.it2}"
+                                      columns="30" secret="true" showRequired="true" required="true"/>
+                        <af:button text="Login" id="b1" binding="#{backingBeanScope.backing_Login.b1}"
+                                   actionListener="#{backingBeanScope.backing_Login.login}"/>
+                    </af:panelFormLayout>
+                </f:facet>
+            </af:panelStretchLayout>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_Login-->
+</f:view>
