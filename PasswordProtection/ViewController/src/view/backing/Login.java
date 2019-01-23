@@ -102,7 +102,7 @@ public class Login {
             conn = getConnection();
             Statement stmt = conn.createStatement();
             ResultSet rset =
-                stmt.executeQuery("select max(user_password) up,max(u_salt) us,max(user_name) un from c_user where user_id='" + user +
+                stmt.executeQuery("select max(user_password) up,max(salt) us,max(user_name) un from c_user where user_id='" + user +
                                   "'");
             if (rset.next()) {
                 String usersalt = rset.getString("us");
@@ -136,8 +136,8 @@ public class Login {
     }
 
     public static Connection getConnection() throws SQLException {
-        String username = "gowtham ";
-        String password = "gowtham";
+        String username = " ";
+        String password = "";
         String thinConn = "jdbc:oracle:thin:@localhost:1521:XE";
         DriverManager.registerDriver(new OracleDriver());
         Connection conn = DriverManager.getConnection(thinConn, username, password);
@@ -146,7 +146,7 @@ public class Login {
     }
 
     private String getEncryptedPassword(String password, String salt) throws Exception {
-        String algorithm = "PBKDF2WithHmacSHA1";
+        String algorithm = "";
         int derivedKeyLength = 160; // for SHA1
         int iterations = 20000; // NIST specifies 10000
         byte[] saltBytes = Base64.decode(salt);

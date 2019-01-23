@@ -199,14 +199,14 @@ public class CUserImpl extends EntityImpl {
     }
     
     private String getNewSalt() throws Exception{
-            SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
+            SecureRandom random = SecureRandom.getInstance("");
             byte[] salt = new byte[8];
             random.nextBytes(salt);
             return Base64.encode(salt);
         }
 
     private String getEncryptedPassword(String password, String salt) throws Exception {
-            String algorithm = "PBKDF2WithHmacSHA1";
+            String algorithm = "";
             int derivedKeyLength = 160; // for SHA1
             int iterations = 20000; // NIST specifies 10000
             byte[] saltBytes = Base64.decode(salt);
